@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Login Page{% endblock %}
+{% load static %}
+{% block content %}
+<br>
+    <!-- Register & Login Form Start -->
+<div class="register-login-form">
+    <h3 class="title">Login <span>Now</span></h3>
+
+    <div class="form-wrapper">
+        <form method="post" action="{% url 'login_view' %}">
+        {% csrf_token %}
+    <!-- Single Form Start -->
+    <div class="single-form">
+    <input type="text" name="email_or_username" placeholder="Username or Email">
+    </div>
+    <!-- Single Form End -->
+    <!-- Single Form Start -->
+    <div class="single-form">
+    <input type="password" name="password" placeholder="Password">
+    </div>
+    <!-- Single Form End -->
+    <!-- Single Form Start -->
+    <div class="single-form">
+    <button class="btn btn-primary btn-hover-dark w-100" type="submit">Login</button>
+    <a class="btn btn-secondary btn-outline w-100" href="#">Login with Google</a>
+    </div>
+                                        <!-- Single Form End -->
+                                    </form>
+                                    
+                                    {% if error_message %}
+                                        <p class="error-message">{{ error_message }}</p>
+                                    {% endif %}
+                                </div>
+                                
+                            </div>
+                            <!-- Register & Login Form End -->
+
+                        </div>        
+                        </div>
+        </div>
+        <!-- Register & Login Wrapper End -->
+
+        </div>
+        </div>
+        <!-- Register & Login End -->
+<br>
+{% endblock %}

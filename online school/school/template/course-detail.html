@@ -1,0 +1,459 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+    <div class="main-wrapper">
+
+                <!-- Page Banner Start -->
+        <div class="section page-banner">
+
+            <img class="shape-1 animation-round" src="static/images/shape/shape-8.png" alt="Shape">
+
+            <img class="shape-2" src="static/images/shape/shape-23.png" alt="Shape">
+
+            {% comment %} <div class="container">
+                <!-- Page Banner Start -->
+                <div class="page-banner-content">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Courses Details</li>
+                    </ul>
+                    <h2 class="title">Courses <span> Details</span></h2>
+                </div>
+                <!-- Page Banner End -->
+            </div> 
+
+            <!-- Shape Icon Box Start -->
+            <div class="shape-icon-box">
+
+                <img class="icon-shape-1 animation-left" src="static/images/shape/shape-5.png" alt="Shape">
+
+                <div class="box-content">
+                    <div class="box-wrapper">
+                        <i class="flaticon-badge"></i>
+                    </div>
+                </div>
+
+                <img class="icon-shape-2" src="static/images/shape/shape-6.png" alt="Shape">
+
+            </div>
+            <!-- Shape Icon Box End -->
+            <img class="shape-3" src="static/images/shape/shape-24.png" alt="Shape">
+
+            <img class="shape-author" src="static/images/author/author-11.jpg" alt="Shape">
+            {% endcomment %}
+        
+        </div>
+        <!-- Page Banner End -->
+       
+
+        <!-- Courses Start -->
+        <div class="section section-padding mt-n10">
+            <div class="container">
+                <div class="row gx-10">
+                    <div class="col-lg-8">
+
+                        <!-- Courses Details Start -->
+                        <div class="courses-details">
+
+                            <div class="courses-details-images">
+                                <img src="{% static 'images/data_science.png'%}" height: "200 px" alt="Courses Details">
+                                <span class="tags">Python</span>
+
+                                <!-- <div class="courses-play">
+                                    <img src="static/images/courses/circle-shape.png" alt="Play">
+                                    <a class="play video-popup" href="https://www.youtube.com/watch?v=Wif4ZkwC0AM"><i class="flaticon-play"></i></a>
+                                </div> -->
+                            </div>
+
+                            <h2 class="title">{{course.title}}</h2>
+
+                            <div class="courses-details-admin">
+                                <div class="admin-author">
+                                    <div class="author-thumb">
+                                        <img src="{% static 'images/about.jpg'%}" alt="Author">
+                                    </div>
+                                    <div class="author-content">
+                                        <a class="name" href="#">{{course.user}}</a>
+                                        <span class="Enroll">286 Enrolled Students</span>
+                                    </div>
+                                </div>
+                                <div class="admin-rating">
+                                    <span class="rating-count">4.9</span>
+                                    <span class="rating-star">
+											<span class="rating-bar" style="width: 80%;"></span>
+                                    </span>
+                                    <span class="rating-text">(5,764 Rating)</span>
+                                </div>
+                            </div>
+
+                            <!-- Courses Details Tab Start -->
+                            <div class="courses-details-tab">
+
+                                <!-- Details Tab Menu Start -->
+                                <div class="details-tab-menu">
+                                    <ul class="nav justify-content-center">
+                                        <li><button class="active" data-bs-toggle="tab" data-bs-target="#description">Description</button></li>
+                                        <li><button data-bs-toggle="tab" data-bs-target="#instructors">Instructors</button></li>
+                                        <li><button data-bs-toggle="tab" data-bs-target="#reviews">Reviews</button></li>
+                                    </ul>
+                                </div>
+                                <!-- Details Tab Menu End -->
+
+                                <!-- Details Tab Content Start -->
+                                <div class="details-tab-content">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="description">
+
+                                            <!-- Tab Description Start -->
+                                            <div class="tab-description">
+                                                <div class="description-wrapper">
+                                                    <h3 class="tab-title">Description:</h3>
+                                                   {{course.content}}
+                                                </div>
+                                                <div class="description-wrapper">
+                                                    <h3 class="tab-title">Curriculum:</h3>
+                                                    {{course.description}}
+                                                </div>
+                                            </div>
+                                            <!-- Tab Description End -->
+
+                                        </div>
+                                        <div class="tab-pane fade" id="instructors">
+
+                                            <!-- Tab Instructors Start -->
+                                            <div class="tab-instructors">
+                                                <h3 class="tab-title">Course Instructor:</h3>
+
+                                                <div class="row">
+                                                    {% for i in instructor %}
+                                                    <div class="col-md-3 col-6">
+                                                        <!-- Single Team Start -->
+                                                        <div class="single-team">
+                                                            <div class="team-thumb">
+                                                                <img src="#" alt="Author">
+                                                            </div>
+                                                            <div class="team-content">
+                                                                <div class="rating">
+                                                                    <span class="count">4.9</span>
+                                                                    <i class="icofont-star"></i>
+                                                                    <span class="text">(rating)</span>
+                                                                </div>
+                                                                <h4 class="name">{{i.username}}</h4>
+                                                                <span class="designation">MSC, Instructor</span>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Single Team End -->
+                                                    </div>
+                                                    {% endfor %}
+                                                    
+                                                </div>
+
+                                                <div class="row gx-10">
+                                                    <div class="col-lg-6">
+                                                        <div class="tab-rating-content">
+                                                            <h3 class="tab-title">Rating:</h3>
+                                                            <p>Lorem Ipsum is simply dummy text of printing and typesetting industry. Lorem Ipsum has been the i dustry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
+                                                            <p>Lorem Ipsum is simply dummy text of printing and typesetting industry text ever since</p>
+                                                            <p>Lorem Ipsum is simply dummy text of printing and dustry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="tab-rating-box">
+                                                            <span class="count">4.8 <i class="icofont-star"></i></span>
+                                                            <p>Rating (86K+)</p>
+
+                                                            <div class="rating-box-wrapper">
+                                                                <div class="single-rating">
+                                                                    <span class="rating-star">
+																			<span class="rating-bar" style="width: 100%;"></span>
+                                                                    </span>
+                                                                    <div class="rating-progress-bar">
+                                                                        <div class="rating-line" style="width: 75%;"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="single-rating">
+                                                                    <span class="rating-star">
+																			<span class="rating-bar" style="width: 80%;"></span>
+                                                                    </span>
+                                                                    <div class="rating-progress-bar">
+                                                                        <div class="rating-line" style="width: 90%;"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="single-rating">
+                                                                    <span class="rating-star">
+																			<span class="rating-bar" style="width: 60%;"></span>
+                                                                    </span>
+                                                                    <div class="rating-progress-bar">
+                                                                        <div class="rating-line" style="width: 500%;"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="single-rating">
+                                                                    <span class="rating-star">
+																			<span class="rating-bar" style="width: 40%;"></span>
+                                                                    </span>
+                                                                    <div class="rating-progress-bar">
+                                                                        <div class="rating-line" style="width: 80%;"></div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="single-rating">
+                                                                    <span class="rating-star">
+																			<span class="rating-bar" style="width: 20%;"></span>
+                                                                    </span>
+                                                                    <div class="rating-progress-bar">
+                                                                        <div class="rating-line" style="width: 40%;"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Tab Instructors End -->
+
+                                        </div>
+                                        <div class="tab-pane fade" id="reviews">
+
+                                            <!-- Tab Reviews Start -->
+                                            <div class="tab-reviews">
+                                                <h3 class="tab-title">Student Reviews:</h3>
+
+                                                <div class="reviews-wrapper reviews-active">
+                                                    <div class="swiper-container">
+                                                        <div class="swiper-wrapper">
+
+                                                            <!-- Single Reviews Start -->
+                                                            {% for i in review %}
+                                                            <div class="single-review swiper-slide">
+                                                                <div class="review-author">
+                                                                    <div class="author-thumb">
+                                                                        <img src="static/images/author/author-06.jpg" alt="Author">
+                                                                        <i class="icofont-quote-left"></i>
+                                                                    </div>
+                                                                    <div class="author-content">
+                                                                        <h4 class="name">{{i.name}}</h4>
+                                                                        <span class="designation">{{i.email}}</span>
+                                                                        <span class="rating-star">
+																				<span class="rating-bar" style="width: 100%;"></span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <p>{{i.text}}</p>
+                                                            </div>
+                                                            {% endfor %}
+                                                            <!-- Single Reviews End -->
+
+                                                        </div>
+                                                        <!-- Add Pagination -->
+                                                        <div class="swiper-pagination"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="reviews-btn">
+                                                    <button type="button" class="btn btn-primary btn-hover-dark" data-bs-toggle="modal" data-bs-target="#reviewsModal">Write A Review</button>
+                                                </div>
+
+                                                <!-- Reviews Form Modal Start -->
+                                                <div class="modal fade" id="reviewsModal">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Add a Review</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+
+                                                            <!-- Reviews Form Start -->
+                                                            <div class="modal-body reviews-form">
+                                                                <form id="review-form" method="post" enctype="multipart/form-data">
+                                                                    {% csrf_token %}
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <!-- Single Form Start -->
+                                                                            <input type="hidden" name="course_id" value="{{ course.id }}">
+
+                                                                            <div class="single-form">
+                                                                                <input type="text" name="name" placeholder="Enter your name">
+                                                                            </div>
+                                                                            <!-- Single Form End -->
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <!-- Single Form Start -->
+                                                                            <div class="single-form">
+                                                                                <input type="text" name="email" placeholder="Enter your Email">
+                                                                            </div>
+                                                                            <!-- Single Form End -->
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <!-- Single Form Start -->
+                                                                            <!-- Single Form End -->
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <!-- Single Form Start -->
+                                                                            <div class="single-form">
+                                                                                <textarea name="text" placeholder="Write your comments here"></textarea>
+                                                                            </div>
+                                                                            <!-- Single Form End -->
+                                                                        </div>
+                                                                        <div class="col-md-12">
+                                                                            <!-- Single Form Start -->
+                                                                            <div class="single-form">
+                                                                                <button type="submit" class="btn btn-primary btn-hover-dark">Submit Review</button>
+                                                                            </div>
+                                                                            <!-- Single Form End -->
+                                                                        </div>
+                                                                    </div>
+                                                                    <script>
+                                                                        const csrfToken = "{{ csrf_token }}";  // Define the csrfToken JavaScript variable with the value of the CSRF token
+                                                                        </script>
+                                                                        
+                                                                    <!-- Inside your Django template, where you include the JavaScript code -->
+                                                                        <script>
+                                                                            document.addEventListener('DOMContentLoaded', function() {
+                                                                                const reviewForm = document.getElementById('review-form');
+                                                                                
+                                                                                reviewForm.addEventListener('submit', function(e) {
+                                                                                    e.preventDefault();
+                                                                                    
+                                                                                    // Serialize form data
+                                                                                    const formData = new FormData(reviewForm);
+                                                                                    
+                                                                                    // Send an AJAX POST request to the add_review view
+                                                                                    fetch('/add_review/', {
+                                                                                        method: 'POST',
+                                                                                        body: formData,
+                                                                                        headers: {
+                                                                                            'X-CSRFToken': getCookie('csrftoken'),  // Use this to include the CSRF token
+                                                                                        },
+                                                                                    })
+                                                                                    .then(response => response.json())
+                                                                                    .then(data => {
+                                                                                        if (data.success) {
+                                                                                            // Review was successfully added, you can update the UI as needed.
+                                                                                            alert('Review added successfully.');
+                                                                                            // You can also close the modal or perform other actions.
+                                                                                        } else {
+                                                                                            alert('Failed to add review. Please try again.');
+                                                                                        }
+                                                                                    })
+                                                                                    .catch(error => {
+                                                                                        console.error('Error:', error);
+                                                                                        alert('An error occurred while adding the review.');
+                                                                                    });
+                                                                                });
+                                                                                
+                                                                                // Function to get the CSRF token from cookies
+                                                                                function getCookie(name) {
+                                                                                    let cookieValue = null;
+                                                                                    if (document.cookie && document.cookie !== '') {
+                                                                                        const cookies = document.cookie.split(';');
+                                                                                        for (let i = 0; i < cookies.length; i++) {
+                                                                                            const cookie = cookies[i].trim();
+                                                                                            // Does this cookie string begin with the name we want?
+                                                                                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                                                                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                                                                                break;
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                    return cookieValue;
+                                                                                }
+                                                                            });
+                                                                            </script>
+    
+                                                                        
+                                                                </form>
+                                                            </div>
+                                                            <!-- Reviews Form End -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Reviews Form Modal End -->
+
+                                            </div>
+                                            <!-- Tab Reviews End -->
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Details Tab Content End -->
+
+                            </div>
+                            <!-- Courses Details Tab End -->
+
+                        </div>
+                        <!-- Courses Details End -->
+
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Courses Details Sidebar Start -->
+                        <div class="sidebar">
+
+                            <!-- Sidebar Widget Information Start -->
+                            <div class="sidebar-widget widget-information">
+                                <div class="info-price">
+                                    <span class="price">{{course.fees}}</span>
+                                </div>
+                                <div class="info-list">
+                                    <ul>
+                                        <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong> <span>{{course.user}}</span></li>
+                                        <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>08 hr 15 mins</span></li>
+                                        <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong> <span>29</span></li>
+                                        <li><i class="icofont-bars"></i> <strong>Level</strong> <span>{{course.level}}</span></li>
+                                        <li><i class="icofont-book-alt"></i> <strong>Language</strong> <span>{{course.language}}</span></li>
+                                        <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong> <span>Yes</span></li>
+                                    </ul>
+                                </div>
+                                <div class="info-btn">
+                                    <a href="{% url 'enroll_course' course.id %}" class="btn btn-primary btn-hover-dark">Enroll Now</a>
+                                </div>
+                                
+                            </div>
+                            <!-- Sidebar Widget Information End -->
+
+                            <!-- Sidebar Widget Share Start -->
+                            <div class="sidebar-widget">
+                                <h4 class="widget-title">Share Course:</h4>
+                            
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank">
+                                            <i class="flaticon-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri }}&title=Your%20Title&summary=Your%20Description" target="_blank">
+                                            <i class="flaticon-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text=Your%20Title" target="_blank">
+                                            <i class="flaticon-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="skype:?chat&topic={{ request.build_absolute_uri }}" target="_blank">
+                                            <i class="flaticon-skype"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/share?url={{ request.build_absolute_uri }}&title=Your%20Title&media=Your%20Image%20URL" target="_blank">
+                                            <i class="flaticon-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            
+                            <!-- Sidebar Widget Share End -->
+
+                        </div>
+                        <!-- Courses Details Sidebar End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Courses End -->
+{% endblock %}

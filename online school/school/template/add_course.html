@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your HTML head content here -->
+</head>
+<body>
+    <h1>Add a New Course</h1>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Course</button>
+    </form>
+    
+    <!-- Add your footer or navigation links as needed -->
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll in Course</title>
+</head>
+<body>
+    <h1>Enroll in Course</h1>
+    
+    <p>You are enrolling in the course: {{ course.title }}</p>
+    
+    <form method="POST" action="{% url 'payment_process' course.id %}">
+        {% csrf_token %}
+        <!-- Include your payment form fields here, e.g., credit card information, etc. -->
+        
+        <button type="submit">Proceed to Payment</button>
+    </form>
+    
+    <a href="{% url 'view_course' course.id %}">Back to Course</a>
+</body>
+</html>
